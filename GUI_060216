@@ -111,7 +111,7 @@ stimintinput = new JFormattedTextField("45");
 stimintinput.setColumns(12);
  
 
-directoryinput = new JFormattedTextField("D:\\tmp");
+directoryinput = new JFormattedTextField("E:\\tmp");
 directoryinput.setColumns(35);
 directoryinput.setEditable(false);
 
@@ -976,7 +976,7 @@ void actionPerformed(ActionEvent e) {
 				//==========================================================================
 				//Write to MicroManager Directory for setting data to be passed to second script
 				//==========================================================================
-				FileWriter fw = new FileWriter("C:/User Defined Acquisition Settings.txt");
+				FileWriter fw = new FileWriter("E:/User Defined Acquisition Settings.txt");
 				PrintWriter pw = new PrintWriter(fw);
 				pw.println(initializex);
 				pw.println(exposuretext);
