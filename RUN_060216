@@ -16,7 +16,7 @@ gui.closeAllAcquisitions();
 gui.clearMessageWindow();
 
 String goodguisavepath;
-String settingsFilename = "C:/User Defined Acquisition Settings.txt";
+String settingsFilename = "E:/User Defined Acquisition Settings.txt";
 SERIAL_WAIT = 1500; 		// Time to wait for serial communication (ms)
 
 ////////////////////////////////////////////////////
@@ -189,7 +189,7 @@ int streamAcquisitionAndSave( String guisavepath, String MMfolder, String filena
 	gui.closeAcquisitionWindow(filename);
 
 	//Move file to experiment folder
-	String oldfile = guisavepath+"/"+filename+"/MMStack.ome.tif";
+	String oldfile = guisavepath+"/"+filename+"/MMStack_Pos0.ome.tif";
 	String newfile = MMfolder+"/"+filename+".tif";
 	print("Moving "+oldfile+" to "+newfile);
 	mv(oldfile,newfile); // move file
@@ -326,7 +326,7 @@ moveToPositionList( String controlString, int delaySec )
 ////////////////////////////////////////////////////
 
 // Look for text file created by GUI script, extract variables
-fromfile = readTextInfo("C:/User Defined Acquisition Settings.txt");
+fromfile = readTextInfo("E:/User Defined Acquisition Settings.txt");
 
 // Parse experiment info
 guiexperimenttype = fromfile[0].trim();
@@ -394,7 +394,7 @@ f4 = createInfoWindow("Experiment Progress (Single-Stimulus)");
 	//guiSavePath = new File(guisavepath);
 	//guisavepath = guiSavePath.getAbsolutePath()
 	//cd(guisavepath);
-	guisavepath = "D:\\tmp";
+	guisavepath = "E:\\tmp";
 	//if (guisavepath.contains("\\")) {
 		//guisavepath = guisavepath.replace("\\\\","\\");
 	//}
@@ -494,7 +494,7 @@ if(guiexperimenttype.equals("Multi-Stimulus"))
 	}
 
 	// Create experiment folder
-	guisavepath = "D:\\tmp";
+	guisavepath = "E:\\tmp";
 	String ExpDate = new SimpleDateFormat("yyyy-MM-dd-HH-mm").format(new Date()); //file date time
 	String MMfolder = guisavepath+"/Experiment_"+ExpDate;
 	mkDir(MMfolder);
